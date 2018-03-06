@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script type="text/javascript" src="js/tween.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/model.js"></script>
+<script type="text/javascript" src="js/fns.js"></script>
+<script type="text/javascript" src="js/player.js"></script>
+<script type="text/javascript" src="js/file.js"></script>
+</head>
+<body>
+<div class="desktop">
+	<ul class="wrap"></ul>
+</div>
+<div class="dock">
+	<div class="wrap clearFix">
+		<div class="icon-dock left clearFix">
+			<div class="win">
+				<img src="img/win.png" alt="">
+			</div>
+			<!-- <div class="task open">
+				<img src="img/firefox2.png" alt="">
+			</div>
+			<div class="task">
+				<img src="img/Steam.png" alt="">
+			</div>
+			<div class="task now">
+				<img src="img/qq.png" alt="">
+			</div> -->
+		</div>
+		<div class="info-dock right">
+			<div class="time">
+				<p>12:06</p>
+				<p>2017/11/16</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="winPanel" style="display: none;">
+	<div class="user">
+		<img src="img/timg.jpg" alt="">
+		<p>王健</p>
+	</div>
+	<ul class="quick">
+		<!-- <li>新建博客</li> -->
+		<!-- <li>博客管理</li> -->
+		<!-- <li>计算器</li> -->
+		<li class="musicBtn">音乐播放器</li>
+		<li>
+			<label for="upload" class="upLabel">上传至桌面</label>
+			<input type="file" id="upload">
+		</li>
+		<li class="minesweeperExe">扫雷</li>
+		<li class="logOff">注销</li>
+	</ul>
+</div>
+<ul class="contextmenu"></ul>
+<div class="settingPanel">
+	<div class="top">
+		<h3 class="left">博客设置</h3>
+		<div class="control right">
+			<span>×</span>
+		</div>
+	</div>
+	<div class="cont">
+		<nav>
+			<a href="javascript:;" class="active">博客名称</a>
+			<a href="javascript:;">博客状态</a>
+			<a href="javascript:;">是否允许开放评论</a>
+		</nav>
+		<div class="item">
+			<span>React入门基础指南</span><input type="button" value="修改">
+		</div>
+	</div>
+</div>
+<div class="calendarPanel">
+	<div class="time">17:58:04</div>
+	<div class="date">2017年11月16日</div>
+	<div class="calendar">
+		<h3>2017年11月<span class="right"><</span><span class="right"><</span></h3>
+		<header class="clearFix">
+			<span>日</span>
+			<span>一</span>
+			<span>二</span>
+			<span>三</span>
+			<span>四</span>
+			<span>五</span>
+			<span>六</span>
+		</header>
+		<ul class="days clearFix"><li class="disable">30</li><li class="disable">31</li><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li class="today">17</li><li>18</li><li>19</li><li>20</li><li>21</li><li>22</li><li>23</li><li>24</li><li>25</li><li>26</li><li>27</li><li>28</li><li>29</li><li>30</li><li class="disable">1</li><li class="disable">2</li><li class="disable">3</li><li class="disable">4</li><li class="disable">5</li><li class="disable">6</li><li class="disable">7</li><li class="disable">8</li><li class="disable">9</li><li class="disable">10</li></ul>
+	</div>
+</div>
+<div class="minesweeper" style="display: none;">
+	<div class="top">
+		<h3 class="left">扫雷</h3>
+		<div class="control right">
+			<span class="min">-</span>
+			<span class="max">□</span>
+			<span class="close">×</span>
+		</div>
+	</div>
+	<div class="gameControl">
+		<select>
+			<option>简单</option>
+			<!-- <option>中等</option>
+			<option>困难</option> -->
+		</select>
+		<input type="button" value="开始">
+	</div>
+</div>
+<div class="uploadPanel">
+	<ul></ul>
+</div>
+<div class="calculatorPanel">
+	<div class="top">
+		<h3 class="left">计算器</h3>
+		<div class="control right">
+			<span class="min">-</span>
+			<span class="max">□</span>
+			<span class="close">×</span>
+		</div>
+	</div>
+	<div class="screen">
+		<span></span>
+	</div>
+	<div class="btns">
+		<div class="clear">C</div>
+		<div class="backspace">←</div>
+		<div class="mo">%</div>
+		<div class="chu">÷</div>
+		<div class="seven">7</div>
+		<div class="eight">8</div>
+		<div class="nine">9</div>
+		<div class="cheng">×</div>
+		<div class="four">4</div>
+		<div class="five">5</div>
+		<div class="six">6</div>
+		<div class="jian">－</div>
+		<div class="one">1</div>
+		<div class="two">2</div>
+		<div class="three">3</div>
+		<div class="add">＋</div>
+		<div class="zero">0</div>
+		<div class="point">.</div>
+		<div class="deng">=</div>
+	</div>
+</div>
+<div class="Mplayer" style="display: none">
+	<ul class="list">
+		<li><img src="" alt=""></li>
+		<li><img src="" alt=""></li>
+		<li><img src="" alt=""></li>
+	</ul>
+	<div class="controls">
+		<button type="button" class="muted">♪×</button>
+		<button class="prevBtn" type="button"><</button>
+		<button class="playBtn" type="button">▶</button>
+		<button class="nextBtn" type="button">></button>
+		<button class="close" type="button">×</button>
+	</div>
+	<audio></audio>
+</div>
+<div class="player"></div>
+<div class="welcome">
+	<div class="login">
+		<img src="img/timg.jpg" alt=""><br>
+		<input type="" name="" placeholder="默认密码：admin">
+	</div>
+	<div class="audioarea"></div>
+</div>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/minesweeper.js"></script>
+</body>
+</html>

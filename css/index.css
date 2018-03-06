@@ -1,0 +1,776 @@
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dd,
+form {
+	margin: 0;
+}
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+input,
+select,
+textarea,
+button {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border: 1px solid #000;
+	box-sizing: content-box;
+}
+textarea {
+	resize: none;
+	overflow: auto;
+}
+a {
+	text-decoration: none;
+}
+img {
+	border: none;
+	vertical-align: top;
+}
+table {
+	border-collapse: collapse;
+}
+main {
+	display: block;
+}
+td,
+th {
+	padding: 0;
+}
+em {
+	font-style: normal;
+}
+strong {
+	font-weight: normal;
+}
+.clearFix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+
+
+.wrap{
+	width: 100%;
+}
+html,body{
+	height: 100%;
+	overflow: hidden;
+	user-select: none;
+}
+.desktop{
+	height: calc(100% - 45px);
+	background: url(../img/wall.jpg);
+	background-size:  cover;
+	background-position: center bottom;
+	overflow: hidden;
+	padding-top: 5px;
+}
+.desktop .wrap{
+	height: 100%;
+	position: relative;
+}
+.desktop ul{
+	position: relative;
+}
+.desktop li{
+	position: absolute;
+	width: 74px;
+	border: 1px solid transparent;
+	height: 87px;
+	margin-bottom: 15px;
+	overflow: hidden;
+}
+.desktop li.selected{
+	border: 1px solid #c9bfd6;
+	background: rgba(255,255,255,.6);
+}
+.desktop li input[type=checkbox]{
+	display: none;
+}
+.icon:hover{
+	border: 1px solid #c6bdd1;
+	background: rgba(255,255,255,.3);
+}
+.icon span{
+	background-size: 48px 48px;
+	background-position: 13px 1px;
+	background-repeat: no-repeat;
+	display: block;
+	padding-top: 54px;
+	height: 33px;
+	text-align: center;
+	font: 12px/16px "microsoft yahei";
+	color: white;
+	text-shadow: 1px 2px 2px black;
+}
+.dock{
+	height: 40px;
+	background: #201f22;
+	overflow: hidden;
+	position: relative;
+    z-index: 9999;
+}
+.icon-dock,.info-dock{
+	height: 40px;
+}
+.icon-dock>*:hover,.info-dock>*:hover{
+	background: rgba(255,255,255,.3);
+}
+.win{
+	padding: 9px 13px;
+	float: left;
+}
+.win img,.task img{
+	width: 22px;
+	height: 22px;
+	display: block;
+	margin: 0 auto;
+}
+.icon-dock .task{
+	float: left;
+	padding: 9px 0;
+	width: 48px;
+	margin: 0 1px;
+}
+.icon-dock .open{
+	width: 40px;
+	margin: 0 4px;
+	padding-bottom: 7px;
+	border-bottom: 2px solid #a6d8ff;
+	transition: .5s border;
+}
+.icon-dock .now{
+	width: 48px;
+	margin: 0;
+	background-color: rgba(255,255,255,0.4);
+	padding-bottom: 7px;
+	border-bottom: 2px solid #a6d8ff;
+}
+.icon-dock .now:hover{
+	background: rgba(255,255,255,.6);
+}
+.icon-dock .open:hover{
+	width: 48px;
+	margin: 0;
+}
+.info-dock .time{
+	font: 10px/20px "microsoft yahei";
+	color: white;
+	text-align: center;
+	padding: 0 4px;
+}
+.winPanel{
+	background: rgba(26,26,25,.8);
+	width: 200px;
+	position: fixed;
+	left: 0;
+	z-index: 999;
+	bottom: 40px;
+	color: white;
+}
+.user img{
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	display: block;
+	margin: 10px 0 10px 32px;
+}
+.user p{
+	font: 16px/22px "宋体";
+	color: white;
+	/*text-align: center;*/
+	text-indent: 36px
+}
+.quick{
+	margin-top: 12px;
+}
+.quick li{
+	text-indent: 16px;
+	line-height: 34px;
+	padding: 2px 16px;
+}
+.quick li:hover{
+	background: rgba(255,255,255,.4);
+}
+.contextmenu{
+	width: 180px;
+	border: 1px solid #bababa;
+	box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.8);
+	background: white;
+	position: fixed;
+	z-index: 99;
+	display: none;
+}
+.contextmenu li{
+	font: 12px/44px "宋体";
+	text-indent: 20px;
+	border-bottom: 1px solid #f1f1f1;
+	position: relative;
+	background-color: white;
+}
+.contextmenu li.disabled{
+	color:#a1a1a1;
+}
+.contextmenu li.disabled:hover{
+	background-color: white;
+}
+.contextmenu li h3{
+	font-weight: normal;
+}
+.contextmenu li:hover,.contextmenu .active{
+	background: rgba(222,222,222,1);
+}
+.contextmenu li:last-child{
+	border: none;
+}
+.contextmenu li ul{
+	display: none;
+	position: absolute;
+	left: 170px;
+	border: 1px solid #f1f1f1;
+	top: 10px;
+	right: auto;
+	bottom: auto;
+	width: 200px;
+	z-index: 2;
+}
+.resourcePanel{
+	width: 600px;
+	position: fixed;
+	top: 20px;
+	left: 70px;
+	border: 1px solid #c1c1c1;
+}
+.resourcePanel .top{
+	background: white;
+	height: 30px;
+}
+.resourcePanel .top h3{
+	font-weight: normal;
+	font: 14px/30px "宋体";
+	text-indent: 10px;
+}
+
+.resourcePanel .control span{
+	display: block;
+	width: 35px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	float: left;
+}
+.control span:hover{
+	background: #cdcdcd;
+}
+.control span:last-child:hover{
+	background: #e81123;
+	color: white;
+}
+.resourcePanel .sort{
+	background: #f5f6f7;
+	padding: 10px 0;
+	text-indent: 10px;
+	font-size: 12px;
+	color: #777;
+}
+.sort span{
+	margin-right: 10px;
+}
+.sort a{
+	color: #a1a1a1;
+}
+.sort .backParent{
+	display: inline-block;
+	/*border-top: 1px solid gray;*/
+	margin: 0px 10px 0;
+	text-indent: 0;
+	/*padding: 10px 0 0;*/
+	line-height: 20px;
+}
+.sort select{
+	border-color: rgb(169, 169, 169);
+	color: rgb(169, 169, 169);;
+}
+.checkAll{
+	margin: 0px 0 2px 6px;
+	vertical-align: middle;
+}
+.resourcePanel .cont{
+	min-height: 300px;
+	background: white;
+}
+/*.resourcePanel .cont .left{
+	width: calc(20% - 1px);
+	height: 300px;
+	background: white;
+	border-right: 1px solid #e4e4e4;
+}
+.resourcePanel .cont .left li{
+	text-indent: 34px;
+	font: 20px/32px "宋体";
+	background: url(../img/folder.png) no-repeat;
+	background-position: 10px 7px;
+	background-size: 16px 18px;
+}*/
+.resourcePanel .cont .right{
+	/*width: 80%;*/
+	width: 100%;
+	background: white;
+	height: 300px;
+}
+.cont-title{
+
+}
+.style-list{
+	padding: 10px 0;
+}
+.style-list li{
+	padding: 6px 18px;
+}
+.style-list li:hover{
+	background: rgba(0,0,0,.2);
+}
+.style-list li span{
+	display: inline-block;
+	padding-left: 30px;
+}
+.style-list .folder{
+	background: url(../img/folder.png) no-repeat;
+	background-position: 10px 2px;
+	background-size: 16px 18px;
+}
+.style-list .file{
+	background: url(../img/file.png) no-repeat;
+	background-position: 10px 2px;
+	background-size: 16px 18px;
+}
+.style-bicon{
+	padding: 10px;
+	/*overflow: hidden;*/
+	min-height: 280px;
+	position: relative;
+}
+.style-bicon li{
+	position: absolute;
+	border: 1px solid transparent;
+	/*float: left;*/
+}
+.style-bicon li.selected{
+	border: 1px solid #c9bfd6;
+    background: rgba(225,235,234,.6);
+}
+.style-bicon li input{
+	position: absolute;
+	top: 4px;
+	left: 4px;
+}
+.style-bicon li span{
+	width: 84px;
+	display: block;
+	height: 33px;
+	background: url(../img/icon.png) no-repeat;
+	/*padding: 75px 0px 0px;*/
+	padding: 64px 0px 0px;
+	text-align: center;
+	font: 12px/16px "microsoft yahei";
+}
+.style-bicon span.folder{
+	background-position: 18px 16px; 
+	background-size: 1212px 1023px;
+}
+
+.style-bicon span.pdf{
+	background-position: 18px -158px; 
+	background-size: 1212px 1023px;
+}
+
+.settingPanel{
+	width: 400px;
+	position: fixed;
+	top: 20px;
+	left: 690px;
+	display: none;
+	z-index: 2;
+}
+.settingPanel .top{
+	background: white;
+	height: 30px;
+}
+.settingPanel .top h3{
+	font-weight: normal;
+	font: 14px/30px "宋体";
+	text-indent: 10px;
+}
+
+.settingPanel .control span{
+	display: block;
+	width: 35px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	float: left;
+}
+.settingPanel .cont{
+	width: calc(100% - 20px);
+	background: #f0f0f0;
+	padding: 10px;
+}
+.settingPanel .cont nav{
+	display: inline-block;
+	background: #f0f0f0;
+	font: 16px/30px "宋体";
+	margin-bottom: 0;
+}
+.settingPanel nav a{
+	padding: 0 6px;
+	border: 1px solid #d9d9d9;
+	/*display: inline-block;*/
+	float: left;
+	font-size: 12px;
+	line-height: 24px;
+	color: black;
+	margin-top: 6px;
+	vertical-align: bottom;
+}
+.settingPanel nav .active{
+	line-height:30px;
+	background: white;
+	margin-top: 0px;
+	border-bottom: 1px solid transparent; 
+}
+.settingPanel .item{
+	background: white;
+	border: 1px solid #d9d9d9;
+	height: 200px;
+	margin-top: -5px;
+	padding: 5px;
+}
+.item input{
+	background: #f0f0f0;
+	margin-left: 10px;
+	font: 14px/24px "宋体";
+	width: 40px;
+	text-align: center;
+	border: 1px solid #d9d9d9;
+}
+
+.calendarPanel{
+	position: fixed;
+	display: none;
+	bottom: 40px;
+	right: 0;
+	display: none;
+	width: 380px;
+	background: red;
+	z-index: 3;
+	background: rgba(26,26,25,.8);
+	color: white;
+}
+.calendarPanel .time{
+	padding: 20px 36px 4px;
+	font-size: 40px;
+	font-weight: 100;
+}
+.calendarPanel .date{
+	padding: 0 36px 20px;
+	font-size: 14px;
+	color: #3f8ac4;
+	/*font-weight: 100;*/
+	border-bottom: 1px solid #5d5d5d;
+}
+.calendar{
+
+}
+.calendar h3{
+	font-size: 14px;
+	font-weight: normal;
+	padding: 16px 36px;
+}
+.calendar h3 span:first-child{
+	display: inline-block;
+	transform:rotate(-90deg);
+	margin-left: 10px;
+}
+.calendar h3 span:last-child{
+	display: inline-block;
+	margin-left: 10px;
+	transform:rotate(90deg);
+}
+.calendar header{
+	margin: 0 20px 16px;
+}
+.calendar header span{
+	width: calc(100% / 7);
+	/*display: inline-block;*/
+	float: left;
+	text-align: center;
+}
+.calendar .days{
+	margin: 0 20px;
+}
+.calendar .days li{
+	float: left;
+	text-align: center;
+	width: calc(100% / 7);
+	margin-bottom: 8px;
+	color: #fefefe;
+	line-height: 40px;
+	border: 2px solid transparent;
+	box-sizing: border-box;
+}
+.calendar .days li:hover{
+	border: 2px solid gray;
+}
+.calendar .days .disable{
+	color: #989898;
+}
+.calendar .days .today{
+	color: white;
+	background: #3f8ac4;
+}
+.calendar .days .today:hover{
+	border-color: white;
+}
+
+
+.minesweeper{
+	background: #f5f6f7;
+	position: fixed;
+    left: 20px;
+    top: 20px;
+}
+.minesweeper .top,.calculatorPanel .top{
+    background: white;
+    height: 30px;
+}
+.minesweeper .top h3 ,.calculatorPanel .top h3{
+    font-weight: normal;
+    font: 14px/30px "宋体";
+    text-indent: 10px;
+}
+.minesweeper .control span,.calculatorPanel .control span{
+	display: block;
+	width: 35px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	float: left;
+}
+.minesweeper .box{	
+	position: relative;
+	background: white;
+	padding: 10px;
+}
+.minesweeper .gameControl{
+	padding: 4px 10px;
+}
+.gameControl input,.gameControl select{
+	padding: 2px 4px;
+}
+.minesweeper .box div{
+	border: 1px solid gray;
+	box-sizing: border-box;
+	width:30px;
+	height:30px;
+	position: absolute;
+	line-height: 30px;
+	text-align: center;
+}
+.minesweeper .box .open{
+	background: red;
+}
+
+.upLabel {
+	display: block;
+}
+#upload{
+	display: none;
+}
+.uploadPanel{
+	min-width: 300px;
+	/*min-height: 400px;*/
+	position: fixed;
+	right: 0;
+	top: 0;
+	display: none;
+}
+.uploadPanel li{
+	width: 90px;
+	height: 90px;
+	float: left;
+	margin: 8px;
+	text-align: center;
+}
+.uploadPanel li div{
+	width: 50px;
+	margin: 0 auto;
+	height: 50px;
+	line-height: 50px;
+	box-sizing: border-box;
+	background: white;
+	border: 1px solid gray;
+}
+.uploadPanel li span{
+	display: block;
+	/*height: 40px;*/
+	overflow: hidden;
+	text-align: center;
+    font: 12px/16px "microsoft yahei";
+    color: white;
+    text-shadow: 1px 2px 2px black;
+}
+.player{
+	display: none;
+	position: fixed;
+	left: 50%;
+	padding: 10px;
+	border: 1px solid gray;
+	background: white;
+	z-index: 99;
+	width: 600px;
+	margin-left: -300px;
+	top: 80px;
+}
+.player img{
+	max-width: 100%;
+}
+
+.calculatorPanel{
+	position: fixed;
+    top: 20px;
+    display: none;
+    left: 60px;
+    width: 300px;
+}
+.calculatorPanel .screen{
+	padding: 0 10px;
+	background: white;
+}
+.calculatorPanel .screen span{
+	display: block;
+	border: 2px solid #FF5722;
+	width: 100%;
+	height: 80px;
+	box-shadow: 0 0 10px 0px #FF9800 inset;
+	box-sizing: border-box;
+	vertical-align: top;
+	word-break: break-all;
+}
+.calculatorPanel .btns{
+	background: white;
+	width: 280px;
+	overflow: hidden;
+	padding: 10px;
+}
+.calculatorPanel .btns div{
+	float: left;
+	width: 70px;
+	height: 70px;
+	font: 30px/70px "宋体";
+	background: #f44336;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	border: 1px solid #f1f1f1;
+	box-sizing: border-box;
+}
+.calculatorPanel .btns div:last-child{
+	background: #4caf50;
+	width: 140px;
+}
+.Mplayer{
+	position: fixed;
+	right: 50px;
+	top: 50px;
+	width: 240px;
+	height: 240px;
+	background: #f6f8fa;
+	box-shadow: 0 0 14px -1px rgba(0,0,0,0.8);
+	overflow: hidden;
+	padding: 10px;
+}
+.Mplayer .list{
+	overflow: hidden;
+	width: 750px;
+}
+.Mplayer .list li{
+	float: left;
+	margin-right: 10px;
+	width: 240px;
+}
+.Mplayer .list img{
+	width: 100%;
+}
+.Mplayer .controls{
+	position: absolute;
+	bottom: -52px;
+	transition: bottom 800ms;
+	left: 0;
+	height: 52px;
+	width: 100%;
+	text-align: center;
+	background: rgba(115,225,125,.8);
+}
+.Mplayer .controls button{
+	display: inline-block;
+	width: 30px;
+	font: 14px/30px "宋体";
+	font-weight: bold;
+	height: 30px;
+	color: white;
+	background: rgba(0,0,0,.4);
+	border: 1px solid transparent;
+	border-radius: 50%;
+	margin: 10px 0;
+}
+.welcome{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left: 0;
+	z-index: 9999;
+	background: #f44336;
+}
+.welcome .login{
+	position: absolute;
+	left: 50%;
+	top:50%;
+	margin-left: -150px;
+	margin-top: -100px;
+	width: 300px;
+	height: 160px;
+	text-align: center;
+}
+.welcome .login img{
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+.welcome .login input{
+	margin-top: 18px;
+	text-indent: 10px;
+	height: 30px;
+	width: 220px;
+	outline: none;
+	display: inline-block;
+}
