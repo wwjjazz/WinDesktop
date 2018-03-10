@@ -765,6 +765,7 @@ html,body{
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
+	border:2px solid black;
 }
 .welcome .login input{
 	margin-top: 18px;
